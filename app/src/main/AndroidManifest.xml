@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.tha4shop_nhom4">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="false"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="THA4Shop"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.THA4Shop_Nhom4"
+        tools:targetApi="31">
+        <activity
+            android:name=".activities.Add_AddressAct"
+            android:exported="false" />
+        <activity
+            android:name=".activities.AddressAct"
+            android:exported="false" />
+        <activity
+            android:name=".activities.CartAct"
+            android:exported="false" />
+        <activity
+            android:name=".activities.ShowAllAct"
+            android:exported="false" />
+        <activity
+            android:name=".activities.DetailsAct"
+            android:exported="false" />
+        <activity
+            android:name=".activities.OnboardingAct"
+            android:exported="false" />
+        <activity
+            android:name=".activities.LoginAct"
+            android:exported="false" />
+        <activity
+            android:name=".activities.RegisterAct"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activities.MainAct"
+            android:exported="false" />
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+    </application>
+
+</manifest>

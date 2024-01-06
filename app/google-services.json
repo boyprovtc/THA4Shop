@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "841635719707",
+    "project_id": "tha4shop",
+    "storage_bucket": "tha4shop.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:841635719707:android:110ba2efee19d05bcea6be",
+        "android_client_info": {
+          "package_name": "com.example.tha4shop_nhom4"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD1DZjykhmLNyk1ltPQedIl2xuCbpXJtyA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

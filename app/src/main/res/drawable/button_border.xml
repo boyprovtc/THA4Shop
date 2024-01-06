@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- State khi nút được nhấn -->
+    <item android:state_pressed="true">
+        <shape>
+            <gradient android:angle="270" android:endColor="#000000" android:startColor="#00B8D4" />
+            <corners android:radius="8dp" />
+            <stroke android:width="2dp" android:color="#FFFFFF" /> <!-- Màu viền -->
+        </shape>
+    </item>
+
+    <!-- State khi nút không được nhấn -->
+    <item>
+        <shape>
+            <gradient android:angle="270" android:endColor="#FE5BCA" android:startColor="#FE5BCA" />
+            <corners android:radius="8dp" />
+            <stroke android:width="2dp" android:color="#FFFFFF" /> <!-- Màu viền -->
+        </shape>
+    </item>
+
+</selector>

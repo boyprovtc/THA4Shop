@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">THA4Shop_Nhom4</string>
+
+
+    <string name="first_slide">Lựa chọn những sản phẩm tốt nhất</string>
+    <string name="second_slide">Phục vụ nhanh chóng</string>
+    <string name="third_slide">Tư vấn nhiệt tình</string>
+    <string name="description">Shop bán đồ điện tử THA4</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
