@@ -1,5 +1,6 @@
 package com.example.tha4shop_nhom4.activities;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -112,8 +113,14 @@ public class DetailsAct extends AppCompatActivity {
             name.setText(showAllModel.getName());
             getTotalPrice = showAllModel.getPrice() * totalQuantity;
         }
-
-
+        //Buy Now
+        buynow.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(DetailsAct.this,AddressAct.class));
+            }
+        });
+        //Add To Cart
         addToCart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

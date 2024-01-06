@@ -53,7 +53,7 @@ public class LoginAct extends AppCompatActivity {
 
                   startActivity(new Intent(LoginAct.this, MainAct.class));
               }else {
-                  Toast.makeText(LoginAct.this, "Sai tài Email hoặc mật khẩu",Toast.LENGTH_SHORT).show();
+                  Toast.makeText(LoginAct.this, "Sai Email hoặc mật khẩu",Toast.LENGTH_SHORT).show();
               }
           }
       });

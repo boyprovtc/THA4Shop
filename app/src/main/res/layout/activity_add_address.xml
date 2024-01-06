@@ -40,6 +40,7 @@
             android:hint="Tên Khách hàng"
             android:inputType="text"
             android:padding="10dp"
+            android:textColorHint="#c0c0c0"
             android:textSize="20dp" />
 
 
@@ -49,9 +50,10 @@
             android:layout_height="70dp"
             android:layout_marginTop="10dp"
             android:background="@drawable/rounded_edittext_bg"
+            android:hint="Số nhà, đường, quận(huyện)"
             android:inputType="text"
             android:padding="10dp"
-            android:text="Số nhà, đường, quận(huyện)"
+            android:textColorHint="#c0c0c0"
             android:textSize="20dp" />
 
 
@@ -61,9 +63,10 @@
             android:layout_height="70dp"
             android:layout_marginTop="10dp"
             android:background="@drawable/rounded_edittext_bg"
+            android:hint="Thành phố"
             android:inputType="text"
             android:padding="10dp"
-            android:text="Thành phố"
+            android:textColorHint="#c0c0c0"
             android:textSize="20dp" />
 
 
@@ -73,9 +76,10 @@
             android:layout_height="70dp"
             android:layout_marginTop="10dp"
             android:background="@drawable/rounded_edittext_bg"
+            android:hint="Mã bưu điện nhận hàng"
             android:inputType="number"
             android:padding="10dp"
-            android:text="Mã bưu điện nhận hàng"
+            android:textColorHint="#c0c0c0"
             android:textSize="20dp" />
 
         <EditText
@@ -84,23 +88,24 @@
             android:layout_height="70dp"
             android:layout_marginTop="10dp"
             android:background="@drawable/rounded_edittext_bg"
+            android:hint="Số điện thoại"
             android:inputType="number"
             android:padding="10dp"
-            android:text="Số điện thoại"
+            android:textColorHint="#c0c0c0"
             android:textSize="20dp" />
 
     </LinearLayout>
 
 
     <Button
-        android:id="@+id/ad_add_address"
+        android:id="@+id/ad_add_address_btn"
         android:layout_width="120dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="60dp"
+        android:background="@drawable/button_border"
         android:text="Thêm"
         android:textColor="@android:color/white"
         android:textSize="30dp"
-        android:background="@drawable/button_border"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.504"
