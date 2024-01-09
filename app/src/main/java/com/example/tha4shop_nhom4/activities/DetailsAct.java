@@ -55,6 +55,12 @@ public class DetailsAct extends AppCompatActivity {
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
 
         firestore = FirebaseFirestore.getInstance();
         auth = FirebaseAuth.getInstance();
@@ -117,7 +123,17 @@ public class DetailsAct extends AppCompatActivity {
         buynow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(DetailsAct.this,AddressAct.class));
+                Intent intent = new Intent(DetailsAct.this, AddressAct.class);
+                if (newProductsModel != null) {
+                    intent.putExtra("item", newProductsModel);
+                }
+                if (popularProductsModel != null){
+                    intent.putExtra("item", popularProductsModel);
+                }
+                if (showAllModel != null){
+                    intent.putExtra("item", showAllModel);
+                }
+                startActivity(intent);
             }
         });
         //Add To Cart

@@ -4,11 +4,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/loginbg"
-    tools:context=".activities.RegisterAct">
+    tools:context=".activities.Add_Products_Act">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/products_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#8FF7FD"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:title="Thêm sản phẩm" />
 
     <TextView
-        android:id="@+id/textSignUp"
+        android:id="@+id/text_Add_Products"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="70dp"
@@ -17,23 +27,22 @@
         android:shadowDx="10"
         android:shadowDy="10"
         android:shadowRadius="10"
-        android:text="SIGN UP"
+        android:text="Thêm sản phẩm"
         android:textColor="#00EFFE"
-        android:textSize="55dp"
+        android:textSize="35dp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/editTextName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editTextName"
+        android:id="@+id/add_productsName"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
+        android:layout_marginTop="30dp"
         android:background="@drawable/rounded_edittext_bg"
         android:fontFamily="@font/roboto_bold"
-        android:hint="Name"
+        android:hint="Tên sản phẩm"
         android:maxLines="1"
         android:padding="15dp"
         android:singleLine="true"
@@ -43,17 +52,17 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textSignUp"
+        app:layout_constraintTop_toBottomOf="@+id/text_Add_Products"
         app:layout_constraintWidth_percent="0.8" />
 
     <EditText
-        android:id="@+id/editTextEmail"
+        android:id="@+id/add_productsType"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
         android:background="@drawable/rounded_edittext_bg"
         android:fontFamily="@font/roboto_bold"
-        android:hint="Email"
+        android:hint="Loại sản phẩm"
         android:maxLines="1"
         android:padding="15dp"
         android:singleLine="true"
@@ -63,18 +72,17 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextName"
+        app:layout_constraintTop_toBottomOf="@+id/add_productsName"
         app:layout_constraintWidth_percent="0.8" />
 
     <EditText
-        android:id="@+id/editTextPassword"
+        android:id="@+id/add_productsDesc"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
         android:background="@drawable/rounded_edittext_bg"
         android:fontFamily="@font/roboto_bold"
-        android:hint="Password"
-        android:inputType="textPassword"
+        android:hint="Mô tả"
         android:maxLines="1"
         android:padding="15dp"
         android:singleLine="true"
@@ -84,18 +92,17 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextEmail"
+        app:layout_constraintTop_toBottomOf="@+id/add_productsType"
         app:layout_constraintWidth_percent="0.8" />
 
     <EditText
-        android:id="@+id/editConfirmTextPassword"
+        android:id="@+id/add_productsRating"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
         android:background="@drawable/rounded_edittext_bg"
         android:fontFamily="@font/roboto_bold"
-        android:hint="Confirm Password"
-        android:inputType="textPassword"
+        android:hint="Rating"
         android:maxLines="1"
         android:padding="15dp"
         android:singleLine="true"
@@ -105,71 +112,61 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextPassword"
+        app:layout_constraintTop_toBottomOf="@+id/add_productsDesc"
+        app:layout_constraintWidth_percent="0.8" />
+    <EditText
+        android:id="@+id/add_productsImgUrl"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:background="@drawable/rounded_edittext_bg"
+        android:fontFamily="@font/roboto_bold"
+        android:hint="Đường dẫn hình ảnh"
+        android:maxLines="1"
+        android:padding="15dp"
+        android:singleLine="true"
+        android:textColor="#000000"
+        android:textColorHint="#c0c0c0"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/add_productsRating"
+        app:layout_constraintWidth_percent="0.8" />
+    <EditText
+        android:id="@+id/add_productsPrice"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:background="@drawable/rounded_edittext_bg"
+        android:fontFamily="@font/roboto_bold"
+        android:hint="Giá sản phẩm"
+        android:maxLines="1"
+        android:padding="15dp"
+        android:singleLine="true"
+        android:textColor="#000000"
+        android:textColorHint="#c0c0c0"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/add_productsImgUrl"
         app:layout_constraintWidth_percent="0.8" />
 
-    <LinearLayout
-        android:id="@+id/text1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.758"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editConfirmTextPassword"
-        app:layout_constraintVertical_bias="0.0">
-
-        <TextView
-            android:id="@+id/text2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/roboto_bold"
-            android:text="Already have account ?"
-            android:textColor="#878585"
-            android:textSize="18dp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.56"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextPassword"
-            app:layout_constraintVertical_bias="0.035" />
-
-        <TextView
-            android:id="@+id/textAlreadyHaveAccount"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/roboto_bold"
-            android:onClick="sign_In"
-            android:text=" Sign In"
-            android:textColor="@color/text_onclick"
-            android:textSize="18dp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.56"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextPassword"
-            app:layout_constraintVertical_bias="0.035" />
-
-    </LinearLayout>
 
     <Button
-        android:id="@+id/TextSignUp"
+        android:id="@+id/add_products_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
         android:background="@drawable/button_border"
         android:fontFamily="@font/roboto_bold"
-        android:onClick="sign_Up"
         android:padding="10dp"
-        android:text="Sign up"
+        android:text="Thêm"
         android:textColor="#FFFFFF"
         android:textSize="25dp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text1" />
-
+        app:layout_constraintTop_toBottomOf="@+id/add_productsPrice" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -61,6 +61,10 @@ public class MainAct extends AppCompatActivity {
             startActivity(new Intent(MainAct.this, CartAct.class));
 
         }
+        if (id == R.id.menu_allproducts) {
+            startActivity(new Intent(MainAct.this, AllproductsActivity.class));
+
+        }
         return true;
     }
 }

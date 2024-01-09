@@ -6,6 +6,8 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.icu.text.NumberFormat;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -38,6 +40,7 @@ public class CartAct extends AppCompatActivity {
     private FirebaseAuth auth;
     private FirebaseFirestore firestore;
     int OverAlltotalAmount;
+    Button btnBuyNow;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,6 +54,13 @@ public class CartAct extends AppCompatActivity {
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+
         //Get data from my cart
         LocalBroadcastManager.getInstance(this)
                 .registerReceiver(mMessageReceiver, new IntentFilter("MyTotalAmount"));
@@ -60,7 +70,7 @@ public class CartAct extends AppCompatActivity {
         cartModelList = new ArrayList<>();
         myCartAdapter = new MyCartAdapter(this, cartModelList);
         recyclerView.setAdapter(myCartAdapter);
-
+        btnBuyNow = findViewById(R.id.buy_now);
         firestore.collection("AddToCart").document(auth.getCurrentUser().getUid())
                 .collection("User").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                     @Override
@@ -69,6 +79,8 @@ public class CartAct extends AppCompatActivity {
                         if (task.isSuccessful()) {
                             for (DocumentSnapshot document : task.getResult().getDocuments()) {
                                 MyCartModel myCartModel = document.toObject(MyCartModel.class);
+                                String documentId = document.getId();
+                                myCartModel.setDocumentId(documentId);
                                 cartModelList.add(myCartModel);
                                 myCartAdapter.notifyDataSetChanged();
                             }
@@ -76,7 +88,6 @@ public class CartAct extends AppCompatActivity {
 
                     }
                 });
-
     }
 
     public BroadcastReceiver mMessageReceiver = new BroadcastReceiver() {

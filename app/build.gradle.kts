@@ -29,6 +29,7 @@ android {
     }
 }
 
+
 dependencies {
 
     implementation("androidx.appcompat:appcompat:1.6.1")
@@ -45,4 +46,7 @@ dependencies {
     //glide
     implementation ("com.github.bumptech.glide:glide:4.16.0")
   //  annotationProcessor("com.github.bumptech.glide:glide:compiler:4.16.0")
+    //Razor Payment method
+    implementation ("com.razorpay:checkout:1.6.36")
+
 }

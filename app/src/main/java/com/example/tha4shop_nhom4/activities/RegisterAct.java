@@ -66,6 +66,10 @@ public class RegisterAct extends AppCompatActivity {
             makeText(this, "Vui lòng điền đầy đủ thông tin", LENGTH_SHORT).show();
             return;
         }
+        if(userEmail == "admin@gmail.com"){
+            makeText(this, "Email lỗi, vui lòng đổi email khác", LENGTH_SHORT).show();
+            return;
+        }
         if (userPassword.length() < 6) {
             makeText(this, "Mật khẩu ít nhất 6 kí tự", LENGTH_SHORT).show();
             return;

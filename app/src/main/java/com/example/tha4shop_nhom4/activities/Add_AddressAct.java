@@ -1,14 +1,15 @@
 package com.example.tha4shop_nhom4.activities;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
-import android.widget.Toolbar;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import com.example.tha4shop_nhom4.R;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -33,6 +34,15 @@ public class Add_AddressAct extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_address);
 
+        toolbar = findViewById(R.id.add_address_toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
 
         name = findViewById(R.id.ad_name);
         address = findViewById(R.id.ad_address);
@@ -54,7 +64,7 @@ public class Add_AddressAct extends AppCompatActivity {
 
                 String final_address = "";
                 if (!userName.isEmpty()) {
-                    final_address = final_address + userName + " " ;
+                    final_address = final_address + userName + " ";
                 }
                 if (!userCity.isEmpty()) {
                     final_address = final_address + userCity + " ";
@@ -77,8 +87,10 @@ public class Add_AddressAct extends AppCompatActivity {
                             .collection("Address").add(map).addOnCompleteListener(new OnCompleteListener<DocumentReference>() {
                                 @Override
                                 public void onComplete(@NonNull Task<DocumentReference> task) {
-                                    if(task.isSuccessful()){
+                                    if (task.isSuccessful()) {
                                         Toast.makeText(Add_AddressAct.this, "Đã thêm", Toast.LENGTH_SHORT).show();
+                                        startActivity(new Intent(Add_AddressAct.this, AddressAct.class));
+                                        finish();
                                     }
                                 }
                             });

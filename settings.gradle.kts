@@ -5,6 +5,7 @@ pluginManagement {
         mavenCentral()
         jcenter()
         maven("https://jitpack.io")
+        mavenCentral()
     }
 }
 dependencyResolutionManagement {
